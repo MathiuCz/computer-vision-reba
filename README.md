@@ -1,4 +1,4 @@
-# 🦴 Computer Vision REBA
+# Computer Vision REBA
 
 **Evaluación ergonómica REBA en tiempo real mediante visión por computadora.**
 
@@ -6,18 +6,18 @@ Analiza la postura de un trabajador a través de la webcam y calcula automática
 
 ---
 
-## ✨ Características
+## Características
 
-- 🎥 **Captura en tiempo real** — Análisis de postura directamente desde la webcam.
-- 🤖 **Detección de pose con MediaPipe** — Usa el modelo `PoseLandmarker` de Google para detectar 33 puntos articulares.
-- 📐 **Cálculo de ángulos articulares** — Geometría vectorial pura para obtener ángulos de tronco, cuello, rodillas, brazos, codos y muñecas.
-- 📊 **Scoring REBA completo** — Tablas oficiales de [Ergonautas (UPV)](https://www.ergonautas.upv.es/metodos/reba/reba-ayuda.php): Grupo A (tronco, cuello, piernas), Grupo B (brazo, antebrazo, muñeca), Tabla C y nivel de riesgo.
-- 🎨 **Visualización en pantalla** — Esqueleto, columna vertebral (eje central), panel de ángulos y puntuación REBA con código de color por riesgo.
-- 🧪 **Tests unitarios** — El motor de scoring es lógica pura sin dependencias de cámara, fácil de verificar.
+- **Captura en tiempo real** — Análisis de postura directamente desde la webcam.
+- **Detección de pose con MediaPipe** — Usa el modelo `PoseLandmarker` de Google para detectar 33 puntos articulares.
+- **Cálculo de ángulos articulares** — Geometría vectorial pura para obtener ángulos de tronco, cuello, rodillas, brazos, codos y muñecas.
+- **Scoring REBA completo** — Tablas oficiales de [Ergonautas (UPV)](https://www.ergonautas.upv.es/metodos/reba/reba-ayuda.php): Grupo A (tronco, cuello, piernas), Grupo B (brazo, antebrazo, muñeca), Tabla C y nivel de riesgo.
+- **Visualización en pantalla** — Esqueleto, columna vertebral (eje central), panel de ángulos y puntuación REBA con código de color por riesgo.
+- **Tests unitarios** — El motor de scoring es lógica pura sin dependencias de cámara, fácil de verificar.
 
 ---
 
-## 📁 Estructura del Proyecto
+## Estructura del Proyecto
 
 ```
 computer_vision_REBA/
@@ -38,7 +38,7 @@ computer_vision_REBA/
 
 ---
 
-## 🏗️ Arquitectura (Pipeline)
+## Arquitectura (Pipeline)
 
 El sistema sigue un pipeline de 4 capas, donde cada módulo tiene una responsabilidad clara:
 
@@ -57,7 +57,7 @@ Webcam → [pose.py] → [angles.py] → [scoring.py] → [drawing.py] → Panta
 
 ---
 
-## 🚀 Instalación
+## Instalación
 
 ### Prerrequisitos
 
@@ -96,7 +96,7 @@ Webcam → [pose.py] → [angles.py] → [scoring.py] → [drawing.py] → Panta
 
 ---
 
-## 🎮 Uso
+## Uso
 
 Al ejecutar `main.py`, se abre la webcam y se muestra:
 
@@ -110,7 +110,7 @@ Al ejecutar `main.py`, se abre la webcam y se muestra:
 
 ---
 
-## 📊 Niveles de Riesgo REBA
+## Niveles de Riesgo REBA
 
 | Puntuación | Nivel | Riesgo | Actuación |
 |:----------:|:-----:|--------|-----------|
@@ -122,7 +122,7 @@ Al ejecutar `main.py`, se abre la webcam y se muestra:
 
 ---
 
-## 🧪 Tests
+## Tests
 
 El motor de scoring (`scoring.py`) es lógica pura sin dependencias de cámara ni MediaPipe, lo que permite tests rápidos y determinísticos:
 
@@ -139,7 +139,7 @@ Los tests verifican:
 
 ---
 
-## 🛠️ Tecnologías
+## Tecnologías
 
 | Tecnología | Uso |
 |------------|-----|
@@ -151,7 +151,7 @@ Los tests verifican:
 
 ---
 
-## 📝 Notas
+## Notas
 
 - **Lateralidad:** El sistema evalúa un lado a la vez (`"der"` o `"izq"`). Por defecto se analiza el lado derecho. Para las piernas, siempre se usa la de peor postura (mayor riesgo).
 - **Parámetros manuales:** Los factores de carga, agarre y actividad no son detectables por visión, por lo que se configuran como argumentos en `calcular_reba()`.
@@ -159,13 +159,13 @@ Los tests verifican:
 
 ---
 
-## 📄 Licencia
+## Licencia
 
 Este proyecto es de código abierto. Consulta el archivo `LICENSE` para más detalles.
 
 ---
 
-## 🔗 Referencias
+## Referencias
 
 - [Método REBA — Ergonautas (UPV)](https://www.ergonautas.upv.es/metodos/reba/reba-ayuda.php)
 - [MediaPipe Pose Landmarker](https://ai.google.dev/edge/mediapipe/solutions/vision/pose_landmarker)
